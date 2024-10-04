@@ -45,7 +45,7 @@ export default defineComponent({
         <label><input type="radio" name="operator" value="sum" v-model="operator"/>➕</label>
         <label><input type="radio" name="operator" value="subtract" v-model="operator"/>➖</label>
         <label><input type="radio" name="operator" value="multiply" v-model="operator"/>✖</label>
-        <label><input type="radio" name="operator" value="divide"v-model="operator"/>➗</label>
+        <label><input type="radio" name="operator" value="divide" v-model="operator"/>➗</label>
       </div>
 
       <input type="number" aria-label="Second operand" v-model="operand_2" />
