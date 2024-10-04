@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue/dist/vue.esm-bundler.js'
 
 // Значения взяты из https://jsonplaceholder.typicode.com/comments
 export const emails = [
@@ -32,20 +32,39 @@ export const emails = [
 export default defineComponent({
   name: 'MarkedEmailsApp',
 
-  setup() {},
+  setup() {
+    const filters = ref(null)
+    const filteredEmails = computed(() => {
+      return emails.map(email => {
+        if (filters.value && email.toLowerCase().includes(filters.value.toLowerCase())) {
+          return {
+            [email]: 'marked',
+          }
+        } else {
+          return {
+            [email]: null,
+          }
+        }
+      })
+    })
+
+    return {
+      filters,
+      filteredEmails,
+    }
+  },
 
   template: `
     <div>
       <div class="form-group">
-        <input type="search" aria-label="Search" />
+        <input type="search" aria-label="Search" v-model.trim="filters"/>
       </div>
       <ul aria-label="Emails">
-        <li>
-          Eliseo@gardner.biz
-        </li>
-        <li class="marked">
-          Jayne_Kuhic@sydney.com
-        </li>
+        <template v-for="email in filteredEmails">
+          <li v-for="(value, key) in email" :class="value">
+            {{ key }}
+          </li>
+        </template>
       </ul>
     </div>
   `,
