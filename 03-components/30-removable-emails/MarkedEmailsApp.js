@@ -54,7 +54,11 @@ export default defineComponent({
     })
 
     function removeEmailByIndex(index) {
+      console.log('Before remove:', emails.value)
+      console.log('components App, email: ', index)
       emails.value.splice(index, 1)
+
+      console.log('After remove:', emails.value)
     }
 
     return {
@@ -69,7 +73,7 @@ export default defineComponent({
       <UiFormGroup>
         <UiInput v-model.trim="query" type="search" placeholder="Поиск" aria-label="Поиск" small />
       </UiFormGroup>
-      <EmailList :emails="markedEmails" />
+      <EmailList :emails="markedEmails" @remove-item="removeEmailByIndex"/>
     </div>
   `,
 })
