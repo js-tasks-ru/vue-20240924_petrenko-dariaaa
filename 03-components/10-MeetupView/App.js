@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue/dist/vue.esm-bundler.js'
 import { UiRadioGroup } from '@shgk/vue-course-ui'
 import MeetupView from './MeetupView.js'
 import meetups from './meetups.fixture.ts'
