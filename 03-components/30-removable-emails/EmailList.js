@@ -1,4 +1,4 @@
-import { defineComponent, toRefs } from 'vue'
+import { defineComponent } from 'vue'
 import EmailListItem from './EmailListItem.js'
 
 export default defineComponent({
@@ -15,11 +15,11 @@ export default defineComponent({
     },
   },
 
-  emits: ['remove-item'],
+  emits: ['removeItem'],
 
   setup(props, { emit }) {
     function removeItem(index) {
-      emit('remove-item', index)
+      emit('removeItem', index)
     }
 
     return {

@@ -54,11 +54,7 @@ export default defineComponent({
     })
 
     function removeEmailByIndex(index) {
-      console.log('Before remove:', emails.value)
-      console.log('components App, email: ', index)
       emails.value.splice(index, 1)
-
-      console.log('After remove:', emails.value)
     }
 
     return {

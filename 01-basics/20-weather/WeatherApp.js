@@ -37,33 +37,33 @@ export default defineComponent({
           </div>
           <div>
             <h2 class="weather-card__name">
-              {{city.geographic_name}}
+              {{ city.geographic_name }}
             </h2>
             <div class="weather-card__time">
-            {{city.current.dt}}
+            {{ city.current.dt }}
             </div>
           </div>
           <div class="weather-conditions">
             
-            <div class="weather-conditions__icon" :title="city.current.weather.description">{{weather_icons[city.current.weather.id]}}</div>
-            <div class="weather-conditions__temp">{{formatTempAsCelsium(city.current.temp)}} °C</div>
+            <div class="weather-conditions__icon" :title="city.current.weather.description">{{ weather_icons[city.current.weather.id] }}</div>
+            <div class="weather-conditions__temp">{{ formatTempAsCelsium(city.current.temp) }} °C</div>
           </div>
           <div class="weather-details">
             <div class="weather-details__item">
               <div class="weather-details__item-label">Давление, мм рт. ст.</div>
-              <div class="weather-details__item-value">{{formatPressure(city.current.pressure)}}</div>
+              <div class="weather-details__item-value">{{ formatPressure(city.current.pressure) }}</div>
             </div>
             <div class="weather-details__item">
               <div class="weather-details__item-label">Влажность, %</div>
-              <div class="weather-details__item-value">{{city.current.humidity}}</div>
+              <div class="weather-details__item-value">{{ city.current.humidity }}</div>
             </div>
             <div class="weather-details__item">
               <div class="weather-details__item-label">Облачность, %</div>
-              <div class="weather-details__item-value">{{city.current.clouds}}</div>
+              <div class="weather-details__item-value">{{ city.current.clouds }}</div>
             </div>
             <div class="weather-details__item">
               <div class="weather-details__item-label">Ветер, м/с</div>
-              <div class="weather-details__item-value">{{city.current.wind_speed}}</div>
+              <div class="weather-details__item-value">{{ city.current.wind_speed }}</div>
             </div>
           </div>
         </li>
