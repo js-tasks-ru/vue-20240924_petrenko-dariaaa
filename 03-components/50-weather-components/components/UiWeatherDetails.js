@@ -1,5 +1,4 @@
 import { defineComponent } from 'vue'
-import './../WeatherApp.css'
 
 function formatPressure(press) {
   return Math.round(press * 0.75)
